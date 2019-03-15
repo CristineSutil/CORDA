@@ -1,0 +1,160 @@
+Respostas tarefas
+
+rep.1
+classe de dados IOUState (val quantia: Amount <Currency>, val lender: Party): ContractState {
+    substituir participantes val: List <Party> get () = listOf ()
+
+________________________________________________________________
+
+resp.2
+package net.corda.training.state
+
+import net.corda.core.contracts.Amount
+import net.corda.core.contracts.ContractState
+import net.corda.core.identity.Party
+import java.util.*
+
+data class IOUState(val lender: Party ): ContractState {
+    override val participants: List<Party> get() = listOf()
+}
+
+-hasPaidFieldOfCorrectType:
+package net.corda.training.state
+
+import net.corda.core.contracts.Amount
+import net.corda.core.contracts.ContractState
+import net.corda.core.identity.Party
+import net.corda.finance.POUNDS
+import java.util.*
+
+data class IOUState(val paid: Amount<Currency> = 10.POUNDS ): ContractState {
+    override val participants: List<Party> get() = listOf()
+}
+
+
+
+
+______________________________________________________
+
+resp.3
+1.	-hasLenderFieldOfCorrectType:
+2.	 
+3.	package net.corda.training.state
+4.	 
+5.	import net.corda.core.contracts.Amount
+6.	import net.corda.core.contracts.ContractState
+7.	import net.corda.core.identity.Party
+8.	import java.util.*
+9.	 
+10.	data class IOUState(val lender: Party ): ContractState {
+11.	    override val participants: List<Party> get() = listOf()
+12.	}
+13.	 
+14.	 
+15.	-hasBorrowerFieldOfCorrectType:
+16.	 
+17.	package net.corda.training.state
+18.	 
+19.	import net.corda.core.contracts.Amount
+20.	import net.corda.core.contracts.ContractState
+21.	import net.corda.core.identity.Party
+22.	import java.util.*
+23.	 
+24.	data class IOUState(val borrower: Party ): ContractState {
+25.	    override val participants: List<Party> get() = listOf()
+26.	}
+27.	 
+28.	 
+29.	 
+30.	-hasPaidFieldOfCorrectType:
+31.	package net.corda.training.state
+32.	 
+33.	import net.corda.core.contracts.Amount
+34.	import net.corda.core.contracts.ContractState
+35.	import net.corda.core.identity.Party
+36.	import net.corda.finance.POUNDS
+37.	import java.util.*
+38.	 
+39.	data class IOUState(val paid: Amount<Currency> = 10.POUNDS ): ContractState {
+40.	    override val participants: List<Party> get() = listOf()
+41.	}
+
+
+_________________________________________________________________
+
+resp.4
+1.	package net.corda.training.state
+2.	 
+3.	import net.corda.core.contracts.ContractState
+4.	import net.corda.core.identity.Party
+5.	import java.util.*
+6.	import net.corda.core.contracts.Amount
+7.	import net.corda.finance.*
+8.	 
+9.	/**
+10.	 * This is where you'll add the definition of your state object. Look at the unit tests in [IOUStateTests] for
+11.	 * instructions on how to complete the [IOUState] class.
+12.	 *
+13.	 * Remove the "val data: String = "data" property before starting the [IOUState] tasks.
+14.	 */
+15.	data class IOUState(val amount: Amount<Currency>,
+16.	                    val lender: Party,
+17.	                    val borrower: Party,
+18.	                    val paid: Amount<Currency> = 10.POUNDS): ContractState {
+19.	    override val participants: List<Party> get() = listOf(lender, borrower)
+20.	 
+21.	}
+
+_______________________________________________________________-
+resp.5
+
+1.	package net.corda.training.state
+2.	 
+3.	 
+4.	import net.corda.core.contracts.ContractState
+5.	import net.corda.core.identity.Party
+6.	import java.util.*
+7.	import net.corda.core.contracts.Amount
+8.	import net.corda.core.contracts.FungibleAsset
+9.	import net.corda.finance.contracts.Commodity
+10.	 
+11.	 
+12.	data class IOUState(val amount: Amount<Currency>,
+13.	                    val lender: Party,
+14.	                    val borrower: Party,
+15.	                    val paid: Amount<Currency> = 0.POUNDS): ContractState {
+16.	    
+17.	    override val participants: List<Party> get(participants) = listOf(lender,borrower)
+
+___________________________________________________________
+resp.6
+
+package net.corda.training.state
+
+import net.corda.core.contracts.Amount
+import net.corda.core.contracts.ContractState
+import net.corda.core.contracts.LinearState
+import net.corda.core.contracts.UniqueIdentifier
+import net.corda.core.identity.Party
+import java.util.*
+
+/**
+ * This is where you'll add the definition of your state object. Look at the unit tests in [IOUStateTests] for
+ * instructions on how to complete the [IOUState] class.
+ *
+ * Remove the "val data: String = "data" property before starting the [IOUState] tasks.
+ */
+data class IOUState(val amount: Amount<Currency>,
+                    val lender: Party,
+                    val borrower: Party,
+                    val paid: Amount<Currency> = Amount(0, amount.token),
+                    override val linearId: UniqueIdentifier = UniqueIdentifier()) : ContractState, LinearState {
+
+    fun pay(amount: Amount<Currency>) = copy(paid = amount.plus(paid))
+
+    fun withNewLender(newLender: Party) = copy(lender = newLender)
+    
+    override val participants: List<Party> get() = listOf(lender, borrower)
+}
+
+
