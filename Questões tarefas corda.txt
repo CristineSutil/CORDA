@@ -1,0 +1,33 @@
+1
+Complete o primeiro teste de unidade para adicionar campos ao IOUState: https://github.com/roger3cev/corda-training-template/blob/master/src/test/kotlin/net/corda/training/state/IOUStateTests.kt
+- hasIOUAmountFieldOfCorrectType
+
+2
+Complete unit tests 2-4 for adding fields to the IOUState: https://github.com/roger3cev/corda-training-template/blob/master/src/test/kotlin/net/corda/training/state/IOUStateTests.kt
+- hasLenderFieldOfCorrectType
+- hasBorrowerFieldOfCorrectType
+- hasPaidFieldOfCorrectType
+
+3
+Complete unit tests 2-4 for adding fields to the IOUState: https://github.com/roger3cev/corda-training-template/blob/master/src/test/kotlin/net/corda/training/state/IOUStateTests.kt
+- hasLenderFieldOfCorrectType
+- hasBorrowerFieldOfCorrectType
+- hasPaidFieldOfCorrectType
+
+4
+Complete unit tests 5-6 for participants of the IOUState: https://github.com/roger3cev/corda-training-template/blob/master/src/test/kotlin/net/corda/training/state/IOUStateTests.kt
+- lenderIsParticipant
+- borrowerIsParticipant
+
+5
+Complete the unit tests for helper methods on IOUState: https://github.com/roger3cev/corda-training-template/blob/master/src/test/kotlin/net/corda/training/state/IOUStateTests.kt
+- isLinearState
+- hasLinearIdFieldOfCorrectType
+- checkIOUStateParameterOrdering
+
+6
+Complete unit tests 7-9 for implementing LinearState on IOUState: https://github.com/roger3cev/corda-training-template/blob/master/src/test/kotlin/net/corda/training/state/IOUStateTests.kt
+- lenderIsParticipant
+- borrowerIsParticipant
+
+
