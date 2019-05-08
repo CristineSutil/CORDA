@@ -1,0 +1,15 @@
+1.Complete the unit test for setting up the Issue Command: https://github.com/corda/corda-training-template/blob/master/kotlin-source/src/test/kotlin/net/corda/training/contract/IOUIssueTests.kt
+
+mustIncludeIssueCommand
+
+
+2.Complete the unit test for setting up the Issue Command: https://github.com/corda/corda-training-template/blob/master/kotlin-source/src/test/kotlin/net/corda/training/contract/IOUIssueTests.kt
+
+
+3.Perguntas para esta tarefa
+Complete the unit tests for verifying the transactions: https://github.com/corda/corda-training-template/blob/master/kotlin-source/src/test/kotlin/net/corda/training/contract/IOUIssueTests.kt
+
+- issueTransactionMustHaveNoInputs
+
+- issueTransactionMustHaveOneOutput
+
