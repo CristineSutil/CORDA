@@ -1,0 +1,18 @@
+1 - Uncomment and fix the first unit test in IOUIssueFlowTests to create the transaction proposal inside of IOUIssueFlow: https://github.com/corda/corda-training-template/blob/master/kotlin-source/src/test/kotlin/net/corda/training/flow/IOUIssueFlowTests.kt
+
+This test involves several steps so make sure to follow the hints in the unit test.
+
+flowReturnsCorrectlyFormedPartiallySignedTransaction
+
+
+2- Uncomment and fix the second unit test in IOUIssueFlowTests to verify the transaction proposal inside of IOUIssueFlow https://github.com/corda/corda-training-template/blob/master/kotlin-source/src/test/kotlin/net/corda/training/flow/IOUIssueFlowTests.kt
+
+- flowReturnsVerifiedPartiallySignedTransaction
+
+3- Uncomment and fix the third unit test in IOUIssueFlowTests to collect signatures for the proposed transaction inside of IOUIssueFlow https://github.com/corda/corda-training-template/blob/master/kotlin-source/src/test/kotlin/net/corda/training/flow/IOUIssueFlowTests.kt
+
+- flowReturnsTransactionSignedByBothParties
+
+4- Uncomment and fix the fourth and final unit test in IOUIssueFlowTests to record the finalized transaction in each node's vault inside of IOUIssueFlow https://github.com/corda/corda-training-template/blob/master/kotlin-source/src/test/kotlin/net/corda/training/flow/IOUIssueFlowTests.kt
+
+- flowRecordsTheSameTransactionInBothPartyVault.
